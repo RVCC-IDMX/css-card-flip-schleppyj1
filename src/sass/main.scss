@@ -1,3 +1,67 @@
 /* main */
 @use "./base/reset";
 @use "./pages/home";
+
+.card {
+    width: 400px;
+}
+
+.card__text {
+    text-align: center;
+    position: relative;
+    padding: 11em;
+    transition: transform 3s;
+    background-color: lightpink;
+    transform-style: preserve-3d;
+}
+
+.card__body {
+    border: 3px solid black;
+    padding: 1em;
+    background-color: white;
+}
+
+.card:hover .card__text {
+    transform: rotateY(.5turn);
+}
+
+.card__front,
+.card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    backface-visibility: hidden;
+    display: grid;
+}
+
+.card__front {
+    transform-style: preserve-3d;
+}
+
+.card__title {
+    font-size: 3rem;
+    transform: translateZ(5rem);
+}
+
+.card__subtitle {
+    transform: translateZ(4rem);
+}
+
+.card__title,
+.card__subtitle {
+    border: 3px solid black;
+    background-color: white;
+}
+
+.card__body {
+    transform: translateZ(2rem);
+}
+
+.card__back {
+    transform: rotateY(.5turn);
+    background: lightpink;
+    transform-style: preserve-3d;
+}
